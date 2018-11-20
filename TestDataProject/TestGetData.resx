@@ -163,9 +163,6 @@ EXECUTE @RC = [dbo].[getDsNhanVien] ;
 
 </value>
   </data>
-  <metadata name="checksumCondition2.Configuration" xml:space="preserve">
-    <value>Press to configure</value>
-  </metadata>
   <metadata name="checksumCondition1.Configuration" xml:space="preserve">
     <value>Press to configure</value>
   </metadata>
@@ -181,9 +178,6 @@ EXECUTE @RC = [dbo].[getDsPhong] ;
 
 </value>
   </data>
-  <metadata name="checksumCondition1.Configuration" xml:space="preserve">
-    <value>Press to configure</value>
-  </metadata>
   <metadata name="checksumCondition5.Configuration" xml:space="preserve">
     <value>Press to configure</value>
   </metadata>
@@ -199,9 +193,6 @@ EXECUTE @RC = [dbo].[getDsDatPhong] ;
 
 </value>
   </data>
-  <metadata name="checksumCondition5.Configuration" xml:space="preserve">
-    <value>Press to configure</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

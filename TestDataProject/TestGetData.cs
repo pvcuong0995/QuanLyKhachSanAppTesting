@@ -156,11 +156,11 @@ namespace TestDataProject
             rowCountCondition2.Enabled = true;
             rowCountCondition2.Name = "rowCountCondition2";
             rowCountCondition2.ResultSet = 1;
-            rowCountCondition2.RowCount = 12;
+            rowCountCondition2.RowCount = 13;
             // 
             // checksumCondition2
             // 
-            checksumCondition2.Checksum = "920235316";
+            checksumCondition2.Checksum = "679578466";
             checksumCondition2.Enabled = true;
             checksumCondition2.Name = "checksumCondition2";
             // 
