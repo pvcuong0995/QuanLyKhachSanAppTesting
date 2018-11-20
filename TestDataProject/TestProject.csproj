@@ -56,9 +56,16 @@
     <Compile Include="TestGetData.cs">
       <SubType>Designer</SubType>
     </Compile>
+    <Compile Include="TestHoaDon.cs" />
     <Compile Include="TestLoginQuanLyKhachSan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestQuanLyKhachHang.cs" />
+    <Compile Include="TestDatPhong.cs" />
+    <Compile Include="TestChiTietDatPhong.cs" />
+    <Compile Include="TestQuyenNhanVien.cs" />
+    <Compile Include="TestLoaiPhong.cs" />
+    <Compile Include="TestQuanLyNhanVien.cs" />
+    <Compile Include="TestQuanLyPhong.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

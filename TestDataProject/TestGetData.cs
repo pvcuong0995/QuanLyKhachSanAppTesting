@@ -126,11 +126,11 @@ namespace TestDataProject
             rowCountCondition3.Enabled = true;
             rowCountCondition3.Name = "rowCountCondition3";
             rowCountCondition3.ResultSet = 1;
-            rowCountCondition3.RowCount = 9;
+            rowCountCondition3.RowCount = 10;
             // 
             // checksumCondition3
             // 
-            checksumCondition3.Checksum = "-1604001111";
+            checksumCondition3.Checksum = "-1496969242";
             checksumCondition3.Enabled = true;
             checksumCondition3.Name = "checksumCondition3";
             // 
@@ -220,7 +220,7 @@ namespace TestDataProject
             // 
             // checksumCondition5
             // 
-            checksumCondition5.Checksum = "-910084761";
+            checksumCondition5.Checksum = "1429950451";
             checksumCondition5.Enabled = true;
             checksumCondition5.Name = "checksumCondition5";
             // 

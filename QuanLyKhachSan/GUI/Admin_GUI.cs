@@ -10,12 +10,15 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using QuanLyKhachSan.BLL;
 using QuanLyKhachSan.DAL;
+using QuanLyKhachSan.DTO;
 
 namespace QuanLyKhachSan.GUI
 {
     public partial class Admin_GUI : DevExpress.XtraEditors.XtraUserControl
     {
         Admin_BLL adbl = new Admin_BLL();
+        
+        User_BLL userBLL = new User_BLL();
         DBAccess db = new DBAccess();
         string id = "";
 
@@ -23,7 +26,14 @@ namespace QuanLyKhachSan.GUI
         {
             InitializeComponent();
         }
-
+        private User_DTO getDataQuyen()
+        {
+            User_DTO user = new User_DTO();
+            user.Manv = cbMaNV.SelectedValue.ToString();
+            user.Id = id;
+            user.Mk = txtMatKhau.Text;
+            return user;
+        }
         private void bindDataAd()
         {
             DataRow r = adbl.infoAdmin(frmLogin.mnv);
@@ -42,7 +52,7 @@ namespace QuanLyKhachSan.GUI
 
         private void bindDataCbNV()
         {
-            DataTable dtb = adbl.dsnvpq();
+            DataTable dtb = adbl.dsNhanVienPhanQuyen();
             cbMaNV.DataSource = dtb;
             cbMaNV.ValueMember = "manv";
             cbMaNV.DisplayMember = "manv";
@@ -81,15 +91,16 @@ namespace QuanLyKhachSan.GUI
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-
-            string sql = "Insert Into quyennv Values('"+cbMaNV.SelectedValue.ToString()+"','"+id+"','"+txtMatKhau.Text+"')";
-            string sql2 = "Update quyennv set id='" + id + "',matkhau='" + txtMatKhau.Text + "' where manv = '" + cbMaNV.SelectedValue.ToString() + "'";
+            
+            //string sql = "Insert Into quyennv Values('"+cbMaNV.SelectedValue.ToString()+"','"+id+"','"+txtMatKhau.Text+"')";
+            //string sql2 = "Update quyennv set id='" + id + "',matkhau='" + txtMatKhau.Text + "' where manv = '" + cbMaNV.SelectedValue.ToString() + "'";
             if (txtMatKhau.Text.Length == 3)
             {
                 thongbao.Text = "";
                 if (!db.checkExist("quyennv", "manv", cbMaNV.SelectedValue.ToString()))
                 {
-                    if (db.ExecuteQuery(sql))
+                    User_DTO user = getDataQuyen();
+                    if (userBLL.addQuyen(user))
                     {
                         rdbQuanTri.Checked = false;
                         rdbNhanVien.Checked = false;
@@ -97,11 +108,13 @@ namespace QuanLyKhachSan.GUI
                         txtMatKhau.Text = "";
                         panelpq.Enabled = false;
                         thongbao.Text = "";
+                        MessageBox.Show("Cập nhật thành công!");
                     }
                 }
                 else
                 {
-                    if (db.ExecuteQuery(sql2))
+                    User_DTO user = getDataQuyen();
+                    if (userBLL.editQuyen(user))
                     {
                         rdbQuanTri.Checked = false;
                         rdbNhanVien.Checked = false;
@@ -109,6 +122,7 @@ namespace QuanLyKhachSan.GUI
                         txtMatKhau.Text = "";
                         panelpq.Enabled = false;
                         thongbao.Text = "";
+                        MessageBox.Show("Cập nhật thành công!");
                     }
                 }
             }

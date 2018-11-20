@@ -73,6 +73,8 @@
             this.listPhong = new System.Windows.Forms.ListBox();
             this.cbLoaiPhong = new System.Windows.Forms.ComboBox();
             this.qlkscDataSet1 = new QuanLyKhachSan.QLKSCDataSet();
+            this.txtSoNgay = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdp)).BeginInit();
@@ -88,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiPhongDat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsoluong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qlkscDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoNgay.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl3
@@ -427,6 +430,8 @@
             // 
             // groupControl4
             // 
+            this.groupControl4.Controls.Add(this.txtSoNgay);
+            this.groupControl4.Controls.Add(this.labelControl7);
             this.groupControl4.Controls.Add(this.txtLoaiPhongDat);
             this.groupControl4.Controls.Add(this.txtsoluong);
             this.groupControl4.Controls.Add(this.labelControl8);
@@ -553,6 +558,25 @@
             this.qlkscDataSet1.DataSetName = "QLKSCDataSet";
             this.qlkscDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // txtSoNgay
+            // 
+            this.txtSoNgay.Enabled = false;
+            this.txtSoNgay.Location = new System.Drawing.Point(149, 196);
+            this.txtSoNgay.Name = "txtSoNgay";
+            this.txtSoNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoNgay.Properties.Appearance.Options.UseFont = true;
+            this.txtSoNgay.Size = new System.Drawing.Size(58, 20);
+            this.txtSoNgay.TabIndex = 19;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Location = new System.Drawing.Point(71, 200);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(55, 13);
+            this.labelControl7.TabIndex = 20;
+            this.labelControl7.Text = "Số ngày ở: ";
+            // 
             // DatPhong_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -581,6 +605,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiPhongDat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsoluong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qlkscDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoNgay.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -632,5 +657,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tiendatcoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
         private System.Windows.Forms.DataGridViewCheckBoxColumn trangthai;
+        private DevExpress.XtraEditors.TextEdit txtSoNgay;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }

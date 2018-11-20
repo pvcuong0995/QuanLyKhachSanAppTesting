@@ -23,6 +23,7 @@ namespace QuanLyKhachSan.GUI
         DatPhong_BLL datPhongBL = new DatPhong_BLL();
         ChiTietDatPhong_BLL chiTietDatPhongBL = new ChiTietDatPhong_BLL();
         HoaDon_BLL hoaDonBL = new HoaDon_BLL();
+        HoaDon_DTO hd = null;
         DBAccess db = new DBAccess();
         string tenLoaiPhong = "";
         public static string maDatPhong = "";
@@ -33,6 +34,7 @@ namespace QuanLyKhachSan.GUI
         public DatPhong_GUI()
         {
             InitializeComponent();
+            
         }
 
         private DatPhong_DTO getDataDatPhong()
@@ -368,12 +370,53 @@ namespace QuanLyKhachSan.GUI
                 MessageBox.Show("Mã khách hàng không đúng! Vui lòng nhập lại.");
             }
         }
+        public int getSoNgay(string madp)
+        {
 
+            DataTable tbl = datPhongBL.dsDatPhongMadp(madp);
+            DateTime ngayDen = Convert.ToDateTime(tbl.Rows[0]["ngayden"].ToString());
+            DateTime ngayDi = Convert.ToDateTime(tbl.Rows[0]["ngaydi"].ToString());
+
+            int soNgay = 0;
+            if (ngayDen.Year == ngayDi.Year)
+                soNgay = ngayDi.DayOfYear - ngayDen.DayOfYear;
+            else
+            {
+                int soNam = ngayDi.Year - ngayDen.Year;
+                if (soNam == 1)
+                {
+                    if ((ngayDen.Year % 400 == 0) || (ngayDen.Year % 4 == 0 && ngayDen.Year % 100 == 0))
+                        soNgay = (366 - ngayDen.DayOfYear) + ngayDi.DayOfYear;
+                    else
+                        soNgay = (365 - ngayDen.DayOfYear) + ngayDi.DayOfYear;
+                }
+                else
+                {
+                    for (int i = 0; i < soNam - 1; i++)
+                    {
+                        if (((ngayDen.Year + i) % 400 == 0) || ((ngayDen.Year + i) % 4 == 0 && (ngayDen.Year + i) % 100 == 0))
+                            soNgay = soNgay + 366;
+                        else
+                            soNgay = soNgay + 365;
+                    }
+                    if ((ngayDen.Year % 400 == 0) || (ngayDen.Year % 4 == 0 && ngayDen.Year % 100 == 0))
+                        soNgay = (366 - ngayDen.DayOfYear) + ngayDi.DayOfYear;
+                    else
+                        soNgay = (365 - ngayDen.DayOfYear) + ngayDi.DayOfYear;
+
+                }
+            }
+            if (soNgay == 0)
+                soNgay = 1;
+
+            //txtSoNgay.Text = soNgay.ToString();
+            return soNgay;
+        }
         private int getTongtien()
         {
-            int tg = 0;
-            tg = loaiPhongBL.getGiaPhong(txtLoaiPhongDat.Text) * int.Parse(txtsoluong.Text);
-            return tg;
+            int tong = 0;
+            tong = loaiPhongBL.getGiaPhong(txtLoaiPhongDat.Text) * int.Parse(txtsoluong.Text) * getSoNgay(txtMaDP.Text);
+            return tong;
         }
 
         private string getmahd()
@@ -413,6 +456,8 @@ namespace QuanLyKhachSan.GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            hd = getdatahd();
+            hoaDonBL.updateHoaDon(hd);
             if (ckbtrangtrai.Checked == false)
             {
                 if (MessageBox.Show("Phòng chưa trả!"+System.Environment.NewLine+"Bạn có muốn cập nhật trạng thái phòng và thanh toán?.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -425,7 +470,9 @@ namespace QuanLyKhachSan.GUI
                             phongBL.traphong(getDSPhongDat()[i].ToString());
                             loaiPhongBL.tangSoLuongPhong(txtLoaiPhongDat.Text);
                         }
-                        HoaDon_DTO hd = getdatahd();
+
+                        //hd = getdatahd();
+                        
                         if (hoaDonBL.lapHoaDon(hd))
                         {
                             MessageBox.Show("Cập nhật thành công!");
@@ -437,8 +484,15 @@ namespace QuanLyKhachSan.GUI
             }
             else
             {
-                maDatPhong = txtMaDP.Text;
-                new frmReportHD().Show();
+                //if (hoaDonBL.updateHoaDon(hd))
+                //{
+                //    bindSourceDatPhong();
+                    maDatPhong = txtMaDP.Text;
+                    new frmReportHD().Show();
+               // }
+                //else MessageBox.Show("err");
+                
+               
             }
         }
 
@@ -559,6 +613,8 @@ namespace QuanLyKhachSan.GUI
                 txtTienCoc.Text = dgvdp.Rows[index].Cells[7].Value.ToString();
                 txtsoluong.Text = dgvdp.Rows[index].Cells[8].Value.ToString();
                 ckbtrangtrai.Checked = Convert.ToBoolean(dgvdp.Rows[index].Cells[9].Value);
+                txtSoNgay.Text = getSoNgay(txtMaDP.Text).ToString();
+                //txtSoNgay.Text = getTongtien().ToString();
             }
             catch(Exception)
             {
