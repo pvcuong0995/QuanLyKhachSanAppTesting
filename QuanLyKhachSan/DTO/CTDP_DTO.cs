@@ -22,6 +22,7 @@ namespace QuanLyKhachSan.DTO
             get { return maphong; }
             set { maphong = value; }
         }
+
         public CTDP_DTO()
         {
 
@@ -31,5 +32,6 @@ namespace QuanLyKhachSan.DTO
             this.madp = madp;
             this.maphong = maphong;
         }
+
     }
 }

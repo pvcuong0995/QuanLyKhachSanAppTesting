@@ -78,6 +78,7 @@ namespace QuanLyKhachSan.DTO
             get { return trangthai; }
             set { trangthai = value; }
         }
+
         
 
         public DatPhong_DTO()
@@ -97,5 +98,6 @@ namespace QuanLyKhachSan.DTO
             this.soluong = soluong;
             this.trangthai = trangthai;
         }
+
     }
 }

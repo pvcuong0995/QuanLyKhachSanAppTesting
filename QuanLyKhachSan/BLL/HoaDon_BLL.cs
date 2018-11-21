@@ -20,6 +20,7 @@ namespace QuanLyKhachSan.BLL
             string query = "Insert Into hoadon Values(@mahd,@madp,convert(date,@ngaylap,105),@tongtien)";
             return db.ExecuteNonQueryPara(query, param, values);
         }
+
         public bool updateHoaDon(HoaDon_DTO hd)
         {
             string[] param = { "@mahd", "@madp", "@ngaylap", "@tongtien" };
@@ -28,5 +29,6 @@ namespace QuanLyKhachSan.BLL
             return db.ExecuteNonQueryPara(query, param, values);
         }
        
+
     }
 }

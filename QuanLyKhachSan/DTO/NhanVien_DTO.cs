@@ -75,12 +75,20 @@ namespace QuanLyKhachSan.DTO
         {
 
         }
+
         public NhanVien_DTO(string manv,string macv, string hoten,DateTime ngaysinh, string gioitinh,string sdt,string cmnd,string diachi,string email)
         {
             this.manv = manv;
             this.macv = macv;
             this.hoten = hoten;
             this.ngaysinh = ngaysinh;
+
+        public NhanVien_DTO(string manv,string hoten,string gioitinh,string sdt,string cmnd,string diachi,string email)
+        {
+            this.manv = manv;
+            this.hoten = hoten;
+            //this.ngaysinh = ngaysinh;
+
             this.gioitinh = gioitinh;
             this.sdt = sdt;
             this.cmnd = cmnd;

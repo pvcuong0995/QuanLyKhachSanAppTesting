@@ -36,6 +36,7 @@ namespace QuanLyKhachSan.DTO
             get { return tongtien; }
             set { tongtien = value; }
         }
+
         public HoaDon_DTO()
         {
 
@@ -47,5 +48,6 @@ namespace QuanLyKhachSan.DTO
             this.ngaylap = ngaylap;
             this.tongtien = tongtien;
         }
+
     }
 }

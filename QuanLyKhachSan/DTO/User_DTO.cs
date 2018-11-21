@@ -38,11 +38,13 @@ namespace QuanLyKhachSan.DTO
             this.manv = manv;
             this.mk = mk;
         }
+
         public User_DTO(string manv, string id, string mk)
         {
             this.manv = manv;
             this.id = id;
             this.mk = mk;
         }
+
     }
 }

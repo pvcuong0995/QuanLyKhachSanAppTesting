@@ -57,6 +57,7 @@ namespace QuanLyKhachSan.DAL
                 cmd = new SqlCommand(sql, con);
                 SqlParameter p;
 
+
                 for (int i = 0; i < parameters.Length; i++)
                 {
 
@@ -66,6 +67,13 @@ namespace QuanLyKhachSan.DAL
 
                 }
                 
+
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    p = new SqlParameter(parameters[i], value[i]);
+                    cmd.Parameters.Add(p);
+                }
+
                 num = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -76,6 +84,10 @@ namespace QuanLyKhachSan.DAL
                 return true;
             else
                 return false;
+
+
+            con.Close();
+
         }
 
         public bool ExecuteQuery(string sql)

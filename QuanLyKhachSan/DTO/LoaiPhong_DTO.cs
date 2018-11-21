@@ -29,6 +29,7 @@ namespace QuanLyKhachSan.DTO
             get { return giaphong; }
             set { giaphong = value; }
         }
+
         public LoaiPhong_DTO()
         {
 
@@ -39,5 +40,6 @@ namespace QuanLyKhachSan.DTO
             this.soluong = soluong;
             this.giaphong = giaphong;
         }
+
     }
 }

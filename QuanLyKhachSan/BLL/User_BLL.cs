@@ -20,6 +20,7 @@ namespace QuanLyKhachSan.BLL
                 DataTable dtb = d.getDS(strGetAd);
                 return dtb;
         }
+
         public bool addQuyen(User_DTO user)
         {
             try
@@ -52,6 +53,7 @@ namespace QuanLyKhachSan.BLL
             string query = "Delete quyennv Where manv= @manv";
             return db.ExecuteNonQueryPara(query, param, values);
         }
+
 
        
     }

@@ -18,11 +18,15 @@ namespace QuanLyKhachSan.BLL
             string sql = "Select * From khachhang";
             return db.getDS(sql);
         }
+
         public DataTable traCuu(string dieuKien, string input)
         {
             string sql = "Select * From khachhang Where " + dieuKien + " like '%" + input + "%'";
             return db.getDS(sql);
         }
+
+
+
         public bool addkh(KhachHang_DTO kh)
         {
             string[] param = {"@makh", "@hoten", "@cmnd", "@sdt", "@email", "@diachi" };
