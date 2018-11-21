@@ -19,6 +19,14 @@ namespace QuanLyKhachSan.BLL
             return db.getDS(sql);
         }
 
+
+        public DataTable dsDatPhongMadp(string madp)
+        {
+            string sql = "Select * From datphong where madp='" + madp + "'";
+            return db.getDS(sql);
+        }
+
+
         public bool addDatPhong(DatPhong_DTO dp)
         {
             string[] param = { "@madp", "@manv", "@makh", "@tenloaiphong", "@ngaydat", "@ngayden", "@ngaydi", "@tiendatcoc", "@soluong", "@trangthai" };
@@ -34,6 +42,16 @@ namespace QuanLyKhachSan.BLL
             string query = "Update datphong set madp=@madp,manv=@manv,makh=@makh,tenloaiphong=@tenloaiphong,ngaydat=convert(date,@ngaydat,105),ngayden=convert(date,@ngayden,105),ngaydi=convert(date,@ngaydi,105),tiendatcoc=@tiendatcoc,soluong=@soluong,trangthai=@trangthai where madp=@madp";
             return db.ExecuteNonQueryPara(query, param, values);
         }
+
+        public bool deleteDatPhong(DatPhong_DTO dp)
+        {
+            string[] param = { "@madp", "@manv", "@makh", "@tenloaiphong", "@ngaydat", "@ngayden", "@ngaydi", "@tiendatcoc", "@soluong", "@trangthai" };
+            object[] values = { dp.Madp, dp.Manv, dp.Makh, dp.Tenlp, dp.Ngaydat, dp.Ngayden, dp.Ngaydi, dp.Tiendatcoc, dp.Soluong, dp.Trangthai };
+            string query = "Delete datphong Where madp= @madp";
+            return db.ExecuteNonQueryPara(query, param, values);
+        }
+
+
 
         public bool updateTrangThai(string madp, bool ok)
         {

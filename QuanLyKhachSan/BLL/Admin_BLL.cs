@@ -21,7 +21,7 @@ namespace QuanLyKhachSan.BLL
             return r;
         }
 
-        public DataTable dsnvpq()
+        public DataTable dsNhanVienPhanQuyen()
         {
             string sql = "select manv from nhanvien";
             return db.getDS(sql);

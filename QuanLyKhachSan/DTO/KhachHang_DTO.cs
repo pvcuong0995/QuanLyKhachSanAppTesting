@@ -63,5 +63,10 @@ namespace QuanLyKhachSan.DTO
             this.email = email;
             this.diachi = diaChi;
         }
-    };
+
+       
+    }
+
+    
+
 }

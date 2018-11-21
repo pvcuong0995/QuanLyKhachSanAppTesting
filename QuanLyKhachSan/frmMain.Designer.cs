@@ -77,16 +77,16 @@
             this.nbiDatphong = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiThongtinKH = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiQuanlyphong = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navTime = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiCalculator = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.RibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
@@ -154,6 +154,7 @@
             // bbtnDoimk
             // 
             this.bbtnDoimk.Caption = "Đổi mật khẩu";
+            this.bbtnDoimk.Enabled = false;
             this.bbtnDoimk.Id = 2;
             this.bbtnDoimk.LargeGlyph = global::QuanLyKhachSan.Properties.Resources.password;
             this.bbtnDoimk.LargeWidth = 80;
@@ -509,6 +510,33 @@
             this.nbiQuanlyphong.Name = "nbiQuanlyphong";
             this.nbiQuanlyphong.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiThongtinphong_LinkClicked);
             // 
+            // navBarGroup1
+            // 
+            this.navBarGroup1.Caption = "Tình trạng phòng";
+            this.navBarGroup1.Expanded = true;
+            this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
+            this.navBarGroup1.Name = "navBarGroup1";
+            // 
+            // navBarItem1
+            // 
+            this.navBarItem1.Caption = "Phòng trống";
+            this.navBarItem1.Name = "navBarItem1";
+            this.navBarItem1.SmallImage = global::QuanLyKhachSan.Properties.Resources.themphong;
+            // 
+            // navBarItem2
+            // 
+            this.navBarItem2.Caption = "Có khách";
+            this.navBarItem2.Name = "navBarItem2";
+            this.navBarItem2.SmallImage = global::QuanLyKhachSan.Properties.Resources.dskh;
+            // 
+            // navBarItem3
+            // 
+            this.navBarItem3.Caption = "Lịch";
+            this.navBarItem3.Name = "navBarItem3";
+            // 
             // navTime
             // 
             this.navTime.Caption = "Thời gian: ";
@@ -548,33 +576,6 @@
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(8);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 6;
-            // 
-            // navBarGroup1
-            // 
-            this.navBarGroup1.Caption = "Tình trạng phòng";
-            this.navBarGroup1.Expanded = true;
-            this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
-            this.navBarGroup1.Name = "navBarGroup1";
-            // 
-            // navBarItem1
-            // 
-            this.navBarItem1.Caption = "Phòng trống";
-            this.navBarItem1.Name = "navBarItem1";
-            this.navBarItem1.SmallImage = global::QuanLyKhachSan.Properties.Resources.themphong;
-            // 
-            // navBarItem2
-            // 
-            this.navBarItem2.Caption = "Có khách";
-            this.navBarItem2.Name = "navBarItem2";
-            this.navBarItem2.SmallImage = global::QuanLyKhachSan.Properties.Resources.dskh;
-            // 
-            // navBarItem3
-            // 
-            this.navBarItem3.Caption = "Lịch";
-            this.navBarItem3.Name = "navBarItem3";
             // 
             // frmMain
             // 

@@ -22,5 +22,16 @@ namespace QuanLyKhachSan.DTO
             get { return maphong; }
             set { maphong = value; }
         }
+
+        public CTDP_DTO()
+        {
+
+        }
+        public CTDP_DTO(string madp, string maphong)
+        {
+            this.madp = madp;
+            this.maphong = maphong;
+        }
+
     }
 }

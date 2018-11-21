@@ -29,5 +29,17 @@ namespace QuanLyKhachSan.DTO
             get { return giaphong; }
             set { giaphong = value; }
         }
+
+        public LoaiPhong_DTO()
+        {
+
+        }
+        public LoaiPhong_DTO(string tenloaiphong, int soluong, int giaphong)
+        {
+            this.tenloaiphong = tenloaiphong;
+            this.soluong = soluong;
+            this.giaphong = giaphong;
+        }
+
     }
 }

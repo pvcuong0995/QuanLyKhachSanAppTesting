@@ -78,5 +78,26 @@ namespace QuanLyKhachSan.DTO
             get { return trangthai; }
             set { trangthai = value; }
         }
+
+        
+
+        public DatPhong_DTO()
+        {
+
+        }
+        public DatPhong_DTO(string madp, string manv, string makh, string tenlp, DateTime ngaydat, DateTime ngayden, DateTime ngaydi, int tiencoc, int soluong, bool trangthai)
+        {
+            this.madp = madp;
+            this.manv = manv;
+            this.makh = makh;
+            this.tenloaiphong  = tenlp;
+            this.ngaydat = ngaydat;
+            this.ngayden = ngayden;
+            this.ngaydi = ngaydi;
+            this.tiendatcoc = tiencoc;
+            this.soluong = soluong;
+            this.trangthai = trangthai;
+        }
+
     }
 }

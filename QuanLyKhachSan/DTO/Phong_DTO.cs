@@ -29,5 +29,14 @@ namespace QuanLyKhachSan.DTO
             get { return tinhtrang; }
             set { tinhtrang = value; }
         }
+
+        public Phong_DTO() { }
+        public Phong_DTO(string maphong, string tenphong, bool tinhtrang)
+        {
+            this.maphong = maphong;
+            this.tenloaiphong = tenphong;
+            this.tinhtrang = tinhtrang;
+        }
+
     }
 }

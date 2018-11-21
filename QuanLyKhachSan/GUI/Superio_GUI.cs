@@ -44,10 +44,18 @@ namespace QuanLyKhachSan.GUI
             string info = "";
             if (b)
             {
-                DataTable dtb = new DataTable();
-                dtb = pbl.thongtinphong(btn.Name.ToString());
-                DataRow r = dtb.Rows[0];
-                info = "Khách hàng: " + r[0].ToString() + " - " + r[1].ToString() + System.Environment.NewLine + "Ngày đến: " + r[2].ToString() + System.Environment.NewLine + "Ngày đi: " + r[3].ToString();
+                try
+                {
+                    DataTable dtb = new DataTable();
+                    dtb = pbl.thongtinphong(btn.Name.ToString());
+                    DataRow r = dtb.Rows[0];
+                    //if (r != null)
+                    info = "Khách hàng: " + r[0].ToString() + " - " + r[1].ToString() + System.Environment.NewLine + "Ngày đến: " + r[2].ToString() + System.Environment.NewLine + "Ngày đi: " + r[3].ToString();
+                    //else info = "Chưa cập nhật thông tin khách hàng cho phòng này!";
+                }
+                catch (Exception) {
+                    info = "Phòng này đã đặt nhưng chưa có thông tin khách hàng!";
+                }
             }
             else
             {
